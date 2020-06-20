@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Repeat task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td><input type="checkbox" (change)="updateTask(task.id)"> </td>
+      <td>{{task.name}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.isRepeat}}</td>
+    </tr>
+  </tbody>
+</table>

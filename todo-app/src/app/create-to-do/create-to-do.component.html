@@ -1,0 +1,22 @@
+<div>
+  <form role="form" [formGroup]="form">
+    <div class="form-group">
+      <label for="name">Task Name:</label>
+      <input type="text" formControlName="name" id="name" class="form-control" (focusout)="onSubmit()" />
+    </div>
+    <div class="form-group">
+      <label for="description">Task Description:</label>
+      <input type="text" formControlName="description" id="description" class="form-control" (focusout)="onSubmit()" />
+    </div>
+    <div class="form-group">
+      <label for="isRepeat">Repeat Task:</label>
+      <select formControlName="isRepeat" id="isRepeat" class="form-control" (change)="onSubmit()">
+        <option value=""></option>
+        <option *ngFor="let opt of options" value="{{ opt.value }}">{{
+              opt.name
+            }}</option>
+      </select>
+    </div>
+
+  </form>
+</div>
